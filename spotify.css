@@ -1,0 +1,246 @@
+body{
+   margin:0; /*By default to remove default extraspaces*/ 
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: #000;
+  color: #fff;
+  overflow:hidden;  /*No scrolling for all contents*/
+}
+.main {
+    display: flex;  /*Formed Inline*/
+    height: 100vh;  /*100% height of screen viewport*/ 
+    padding: 0.5rem;    /*For breathing space of spaces*/
+}
+.sidebar {
+    background-color: #000;
+    width: 340px;
+    border-radius: 1rem;  /*1rem = 16px*/
+    margin-right: 0.5rem;
+}
+.main-content {
+    background-color: #121212;
+    flex: 1;        /* give the all left area after all used content*/
+    border-radius: 1rem;
+    overflow: auto; /*show scroll bar when needed*/
+    padding: 1rem;  
+}
+.music-player {
+    background-color: black;
+    position: fixed;
+     bottom : 0px;
+     width: 100%;
+     height: 72px;
+
+}
+a{
+     text-decoration: none;     /*Nop underline*/
+     color: white;
+
+
+}
+.nav {
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;     /*On same line all div*/
+    flex-direction: column;  /*Change direction */
+    justify-content: center;    /*Bring in center*/
+    height: 112px;
+    padding: 0.5rem 0.75rem     /*in rem to make this site responsive on basis of */
+}
+.nav-options{
+    line-height: 2.5rem; /* 40px spacing b/w two options*/
+    opacity: 0.7;
+    padding: 0.5rem 0.75rem;        /*padding*/
+}
+.nav-options:hover{
+    opacity: 1;
+}
+.nav-options i{
+    font-size : 1.25rem;    /*20px*/
+}
+.nav-options a{
+    font-size: 1rem;
+    margin-left: 1rem;
+
+}
+/*Library Styling*/
+.library  {
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;         
+
+}
+.options {
+    display: flex; /*On same line*/
+    justify-content: space-between;
+    align-items: center;    /*Vertically center*/
+}
+.lib-options img{
+    height: 1.25rem;
+}
+.icons {
+    font-size: 1.25rem;
+    display: flex;
+}
+.icons i{
+    opacity: 0.7;
+    margin-right: 1rem;
+}
+.icons i:hover{
+    opacity: 1;
+}
+/*Box styling*/
+.box {
+    background-color: #232323;
+    height: 8rem;
+    border-radius: 0.85rem;
+    margin: 0.75rem 0 1.75rem 0;
+    padding: 0.75rem 1rem;
+}
+.box-p1 {
+    font-size: 1 500;
+}
+.box-p2{
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+.badge {
+    background-color: white;
+    border: none;   /*Remove by default border*/
+    font-weight: 700;
+    border-radius: 100px;
+    padding: 0.25rem 1rem;
+    margin-top: 0.75rem;
+    height: 2rem;
+    width: fit-content;  /*Fit content on the width*/
+
+}
+/*Nav creation*/
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between; 
+    padding: 1rem 0 1rem 0;
+    z-index: 2;     /*To show stack item on top */
+}
+.sticky-nav-icons {
+   margin-left: 0.75rem;
+}
+.sticky-nav-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item{
+    margin-right: 1rem;
+}
+.dark-badge {
+    color: white;
+    background-color: black;
+}
+/*Responsive nav-bar*/
+@media ( max-width: 1000px){
+    .hide{
+        display: none;
+    }
+}
+.sum{
+    height: 17.063rem;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.card{
+    background-color: #232323;
+    border-radius: 0.5rem;
+    width: 200px;
+    padding:  1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+.card-container {
+    display: flex; 
+    flex-wrap: wrap;  /*To maintain fixed sized */
+}
+.card-img {
+    width:100%;
+    border-radius: 0.5rem;
+}
+.card-title {
+    font-weight: 600;
+}
+.card-info {
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+/* Last line creation*/
+.footer {
+    height: 200px;
+    display: flex;
+    
+}
+.line{
+    width: 99%;
+    height: 30%;
+    border-top: 1px solid white;
+    opacity: 0.4;
+}
+/* bottom Playback*/
+.music-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+.album {/*Left side down*/
+    width: 20%;
+}
+.player {
+    width: 50%;
+}
+.controls { /*Right side down */
+    width: 25%;
+} 
+.player-controls {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 3rem;
+}
+.player-control-icon {
+    height: 1rem;
+    margin-right: 1.75rem;
+    opacity: 0.7;
+}
+.player-control-icon:hover {
+    opacity: 1;
+}
+/*Playback-bar */
+.playback-bar {
+    display: fles;
+    justify-content: center;
+    align-items: center;
+}
+.progress-bar {
+    width: 40%;
+    appearance: none;  /*To remove default appreance by OS */
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+.progress-bar::-webkit-slider-runnable-track {   /*for track*/
+    background-color: #ddd;
+    border-radius: 100px;
+    height: 0.2rem;
+}
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background-color: #1bd760;
+    border-radius: 50%;
+    margin-top: -6px;  /*negative margin to shift up */
+}
